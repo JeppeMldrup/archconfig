@@ -1,4 +1,8 @@
 #!/bin/sh
 
 mkdir -p ~/.config/sway
-ln ./sway.conf ~/.config/sway/config
+if [ ! -e ~/.config/sway/config ]
+then
+	echo "Creating symlink for sway config"
+	ln ./sway.conf ~/.config/sway/config
+fi
